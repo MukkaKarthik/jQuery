@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery API Methods</title>
+    <link rel="stylesheet" href="File1.css">
+    
+    <script src="jquery-3.6.0.js"></script>
+    <script src="jquery-migrate-1.4.1.js"></script>
+    <script src="jquery-migrate-3.3.2.js"></script>
+
+</head>
+<body>
+
+<h1>DOM manipulation methods </h1>
+<div id="div_1" title="My Title_1" firstAttribute = "setting first attribute value"> Division 1</div>
+<div id="div_2" title="My Title_2" secondAttribute = "setting second attribute value"> Division 2</div>
+<span id="Inserting_JSONObject">Span Division</span>
+
+
+
+<span id="insertSpan"></span>
+
+<script>
+
+    //Basic printing of attributes 
+
+    
+  /*   jQuery(document).ready(function()
+    {
+
+        var result_JSONObject = "";
+
+        //fetching values from HTML elements and copying it into a string 
+
+        jQuery("#div_1").each(function()
+    {
+        result_JSONObject+= "first property is object = " + jQuery(this).attr("firstAttribute") + "<br>"
+    })
+
+    jQuery("#div_2").each(function()
+    {
+        result_JSONObject+= "second property is object = " + jQuery(this).attr("secondAttribute") + "<br>"
+    })
+
+    // printing on browser 
+    document.write(result_JSONObject);
+
+    });
+ */
+
+
+    // Now looping over arrays 
+    var aRandomArray = [];
+   aRandomArray[0] = jQuery("#div_1").attr("title");
+   aRandomArray[1] = jQuery("#div_2").attr("title");
+
+ 
+   console.log("printing titles");
+   console.log(aRandomArray);
+
+
+/* 
+
+   //Modifying attributes and adding attributes
+   jQuery(document).ready(function()
+   {
+    var a = jQuery("div");
+
+a.each(function()
+{
+    //setting attributes
+    jQuery(this).attr("title","title changed to Sunday");
+    jQuery(this).attr("randomAttribute","random attribute setting via function");
+
+    
+    //getting attributes
+    document.write(jQuery(this).attr("title") + "<br>");
+        document.write(jQuery(this).attr("randomAttribute") + "<br><br><br>");
+
+});
+
+
+
+   });
+ */
+    
+
+
+/*  
+//This is for all while looping 
+    jQuery(document).ready(function ()
+    {
+
+       
+        var division_tag = jQuery("div");
+
+        division_tag.each(function (i)
+        {
+             //Setting customized value attribute for every Division tag
+            jQuery(this).attr("title","Title value changed . New value = Division " + (i+1) + "<br>");
+            jQuery(this).attr("adding_new_attribute" , "added attributes using looping function " + (i+1) )
+
+
+            //Getting attribute for division tag
+            document.write(jQuery(this).attr("title") + "<br>");
+
+            document.write(jQuery(this).attr("adding_new_attribute") + "<br><br>");
+        });
+
+
+    }); 
+
+
+   */
+
+
+
+var JSON_Object = {
+
+    "title" : "Setting Division Title",
+    "style" : "border: 5px solid red",
+    "name" : "Name changed from previous version",
+    "placeholder" : "PlaceHolder value changed "
+
+};
+
+
+
+
+
+// below code is for multiple elements
+
+ /* jQuery(document).ready(function ()
+{
+    jQuery("div").attr(JSON_Object);
+    
+    var result = "";
+
+    jQuery("div").each(function ()
+    {
+        result+= "Changed Title = " + jQuery(this).attr("title") + "<br>";
+        result+= "Changed Style = " + jQuery(this).attr("style") + "<br>";
+        result+= "Changed Name = " + jQuery(this).attr("name") + "<br>";
+        result+= "Changed PlaceHolder = " + jQuery(this).attr("placeholder") + "<br><br>";
+    });
+
+   document.write(result);
+
+});
+ */
+ 
+
+    //Removing title attributes
+
+
+    var result = "Number of division tags holding title attribute = " + jQuery("div[title]").length + "<br>";
+    result+= "Removing title attributes  <br><br>";
+
+    jQuery("div").removeAttr("title");
+    result+= "Number of division tags holding title attribute = " + jQuery("div[title]").length;
+
+    jQuery("#Inserting_JSONObject").html(result);
+
+
+     
+
+    //Wrapping Method
+
+    
+/*     jQuery(document).ready(function ()
+    {
+        jQuery("div").wrap('<div class="ID_changed_to_class"></div>');
+
+        console.log("Checking wrapping methods")
+        console.log(jQuery("div"));
+
+
+       // jQuery("div").wrapAll("<div class='Entire HTML structure enclosed here'></div>");
+
+        jQuery("div").wrapInner("<div class='Content associated with division tag enclosed'></div>");
+
+        console.log("Checking inner wrapping methods")
+        console.log(jQuery("div"));
+
+        jQuery("div").unwrap();
+
+
+    }); */
+     
+</script>
+
+
+<h1>Adding 3 different programming languages </h1>
+<div> Java </div>
+<div> Python </div>
+<div id="JavaScript_ID"> JavaScript </div>
+<div> Hibernate </div>
+<span id="Span_ID">Span Division</span>
+
+
+<script>
+
+    jQuery(document).ready()
+    {
+      /*   jQuery("div").append(" <b>Programming language </b>");
+
+         jQuery("div").prepend("<b>Adding prepend function </b>"); */
+
+        //  jQuery("<b>Using_prepend_method </b>").prependTo(jQuery("div"));
+
+        jQuery("#JavaScript_ID").append(jQuery("#Span_ID")); 
+    }
+
+</script>
+
+<h1>Adding css properties</h1>
+
+<p id="paragraph_id">Apply changes in this paragraph section</p>
+
+
+
+<input title="inputElement" id="button1_ID" type="submit" value="Add color Class">
+<input title="inputElement" id="button2_ID" type="submit" value="Remove color Class">
+
+<br>
+<br>
+
+<input title="inputElement" id="button3_ID" type="submit" value="Add color and Italics Class">
+<input title="inputElement" id="button4_ID" type="submit" value="Remove color and Italics Class">
+
+<br>
+<br>
+
+<input title="inputElement" id="button5_ID" type="submit" value="Add color,Italics and Bold Class">
+<input title="inputElement" id="button6_ID" type="submit" value="Remove color,Italics and Bold Class">
+
+<br>
+<br>
+
+<input title="inputElement" id="button7_ID" type="submit" value="Toggle Class">
+<script>
+
+    jQuery(document).ready(function ()
+    {
+        jQuery("#button1_ID").click(function ()
+        {
+            jQuery("#paragraph_id").addClass("color_class");
+
+        });
+
+        jQuery("#button2_ID").click(function ()
+        {
+            jQuery("#paragraph_id").removeClass("color_class");
+
+        });
+
+
+        jQuery("#button3_ID").click(function ()
+        {
+            jQuery("#paragraph_id").addClass("color_class italics_class");
+
+        });
+
+        jQuery("#button4_ID").click(function ()
+        {
+            jQuery("#paragraph_id").removeClass("color_class italics_class");
+
+        });
+
+        jQuery("#button5_ID").click(function ()
+        {
+            jQuery("#paragraph_id").addClass("color_class italics_class bold_class");
+
+        });
+
+        jQuery("#button6_ID").click(function ()
+        {
+            jQuery("#paragraph_id").removeClass("color_class italics_class bold_class");
+
+        });
+
+        jQuery("#button7_ID").click(function ()
+        {
+            jQuery("#paragraph_id").toggleClass();
+        });
+
+
+    });
+
+</script>
+
+
+<h1>Example applying again</h1>
+
+<label>FirstName</label>
+<input title="inputElement" type="text" addingSomeAttribute="testingPurpose">
+<br>
+
+
+<label>LastName</label>
+<input title="inputElement" type="text" addingSomeAttribute="testingPurpose">
+<br>
+
+<label>Email</label>
+<input title="inputElement" type="text" addingSomeAttribute="testingPurpose">
+<br>
+
+<label>Gender</label>
+<select title="inputSelectElement" >
+    <option>Male</option>
+    <option>Female</option>
+</select title="inputSelectElement">
+
+
+<script>
+
+
+    jQuery(document).ready(function ()
+    {
+        jQuery("input[addingSomeAttribute='testingPurpose']").each(function ()
+        {
+            jQuery(this).focus(function ()
+            {
+                jQuery(this).addClass("textBoxStyle");
+            });
+
+            jQuery(this).blur(function ()
+            {
+                jQuery(this).removeClass("textBoxStyle")
+            });
+        });
+    });
+
+</script>
+
+
+<h1>.each() and Jquery(each) method</h1>
+
+<ul>
+    <li>Java</li>
+    <li>Python</li>
+    <li>Ruby</li>
+    <li>Scalar</li>
+    <li>JavaScript</li>
+</ul>
+
+<div id="division_section">Division Section</div>
+
+<br>
+<br>
+
+<div id="Integer_Array">Integer Array section</div>
+
+<br>
+<br>
+
+<div id="JSON_Object">JSON Object (key,value) pair division</div>
+
+<script>
+
+  /*   jQuery(document).ready(function ()
+    {
+        var result = "";
+        jQuery("li").each(function (index,element)
+        {
+            result+= "Index = " + index + ", value = " + jQuery(element).text() + "<br>";
+        });
+
+        jQuery("#division_section").html(result);
+    });
+
+
+    jQuery(document).ready(function ()
+    {
+        var intArray = [100, 200, 300, 400, 500];
+
+        var result1 = "";
+        jQuery.each(intArray,function (index,element)
+        {
+            result1+= "Index = " + index + ", Value = " + element + "<br>";
+        });
+
+        jQuery("#Integer_Array").html(result1);
+
+    });
+
+    document.write("<br>");
+    document.write("<br>");
+    document.write("<br>");
+
+
+    jQuery(document).ready(function ()
+    {
+        var JavaScript_Object = {
+
+            "language" : "JavaScript",
+            "Version" : "ECMA",
+            "Release_Date" : "5th January 2021",
+            "URL" : "Wikipedia"
+        };
+
+        var result2 = "";
+        jQuery.each(JavaScript_Object,function (key,element)
+        {
+            result2+= "Key = " + key + ", Value = " + element + "<br>";
+        });
+
+        jQuery("#JSON_Object").html(result2);
+
+
+        var printEverything = 
+        {
+            collegeStudent : true,
+            firstName : "hello world",
+            "lastName as printed" : "better programming"
+        }
+
+
+        jQuery.each(printEverything,function(indexValue, elementValue)
+        {
+            var resultTyped = "";
+
+            resultTyped+= "key = " + indexValue + "<br>" + "value = " + elementValue + "<br><br>" ;
+
+            document.write(resultTyped);
+        })
+
+    }); */
+
+    
+
+    //Converting list items to String array
+   /*  var String_Array = [];
+
+    jQuery(document).ready(function ()
+    {
+        jQuery("li").each(function (index,element)
+        {
+                String_Array.push(jQuery(element).text());
+        });
+
+        document.write(String_Array + "<br>");
+    });
+ */
+
+    
+ //Converting list items to String array using Map function
+
+    
+ /*    jQuery(document).ready(function ()
+    {
+        alert((jQuery("li").map(function (index,element)
+        {
+            return jQuery(element).text();
+        })).get());
+    });
+  */   
+
+    //Adding a pipeline
+
+/*     jQuery(document).ready(function ()
+    {
+        var result = "";
+
+        jQuery("li").each(function (index,element)
+        {
+            result+= jQuery(this).text() + " | ";
+        });
+
+        result = result.substring(0,result.length-2);
+
+        document.write(result);
+
+        //alert(result);
+    });
+ */
+</script>
+
+
+<h1>Comparing Map and Each function </h1>
+
+<h2><script>
+
+    var intArray = [5,10,15,20,25];
+
+    function functionA(index,element)
+    {
+        return element*5;
+    }
+
+    function functionB(element,index)
+    {
+        return element*5;
+    }
+
+    var result1 = jQuery.each(intArray,functionA);
+    document.write(result1 + "<br>");
+
+    var result2 =jQuery.map(intArray,functionA);
+
+    document.write(result2);
+</script>
+</h2>
+
+<h1>Checking termination in Map and Each function</h1>
+
+<script>
+
+    var IntArray = [1,2,3,4,5];
+
+    // each function works for Index 
+    jQuery.each(IntArray,function (IndexEach)
+    {
+        if (IndexEach == 3)
+        {
+            return false;
+        }
+        document.write(IndexEach);
+    });
+
+    document.write("<br>");
+
+    // Map function works for elements 
+
+    jQuery.map(IntArray,function (elementMap)
+    {
+        if (elementMap == 3)
+        {
+            return false;
+        }
+        document.write(elementMap);
+    })
+
+
+</script>
+
+<h1>Change Events</h1>
+<label>FirstName</label>
+<input title="inputElement" type="text" class="General_class">
+<br>
+
+<label>LastName</label>
+<input title="inputElement" type="text" class="General_class">
+<br>
+
+<label>City</label>
+<select title="inputSelectElement" id="selected_ID" class="General_class">
+    <option>Bangalore</option>
+    <option>Chennai</option>
+    <option>Mumbai</option>
+    <option>Delhi</option>
+</select title="inputSelectElement">
+<br>
+
+<label>Favorite color</label>
+<input title="inputElement" type="radio" name="radioButton" value="Red" class="General_class">Red
+<input title="inputElement" type="radio" name="radioButton" value="Green" class="General_class">Green
+<input title="inputElement" type="radio" name="radioButton" value="Blue" class="General_class">Blue
+<br>
+
+<label>Contact Method</label>
+<input title="inputElement" type="checkbox" value="Email" class="General_class">Email
+<input title="inputElement" type="checkbox" value="Phone" class="General_class">Phone
+<input title="inputElement" type="checkbox" value="Laptop" class="General_class">Laptop
+<br>
+
+<label>Comments</label>
+<textarea rows="3" cols="25" id="textArea_ID" title="textAreaInputElement"></textarea>
+<br>
+<input title="inputElement" type="submit" value="Submit" class="General_class">
+
+
+<script>
+
+    jQuery(document).ready(function ()
+    {
+        jQuery("#selected_ID").change(function ()
+        {
+            jQuery("#textArea_ID").html(jQuery(this).val());
+        });
+
+    })
+
+
+    jQuery(document).ready(function ()
+    {
+        var result = "";
+        jQuery(".General_class").change(function ()
+        {
+            if (result == "")
+            {
+                result = jQuery(this).val();
+            }
+
+            else
+            {
+                result+= ", " + jQuery(this).val();
+            }
+
+            jQuery("#textArea_ID").html(result);
+        });
+
+    });
+
+</script>
+
+
+<h1>Obtaining properties by clicking on button </h1>
+
+<input title="inputElement" id="input_ID" type="submit" value="Click here">
+<br>
+<br>
+<div id="properties_ID">Properties division </div>
+
+<script>
+
+    jQuery(document).ready(function ()
+    {
+        jQuery("#input_ID").click(function (event)
+        {
+            getEventDetails(event);
+        }).mouseover(function ()
+        {
+            getEventDetails(event);
+        }).mouseout(function ()
+        {
+            getEventDetails(event);
+        });
+
+        function getEventDetails(event)
+        {
+            var EventProperties = "Event Type = " + event.type + "<br>" +
+                "X Co-Ordinate = " + event.pageX + "<br>" +
+                "Y  Co-Ordinate = " + event.pageY + "<br>" +
+                "input Type = " + event.target.type + "<br>" +
+                "Target Element Tag = " + event.target.tagName;
+
+
+            jQuery("#properties_ID").html(EventProperties);
+        }
+    });
+
+</script>
+
+<!-- Using JavaScript Code -->
+<h1>Browser compatibility issues for mouse click</h1>
+<input title="inputElement" id="input"  type="button" value="MouseClick_Button" onmouseup="MouseClick(event)">
+<div id="Button_Click">Print MouseClick Event Number division (javascript division)</div>
+
+<script>
+
+// Using JavaScript Code
+function MouseClick(event)
+{
+    var MouseClick_Button_Variable;
+
+    if(event.which)
+    {
+        switch (event.which)
+        {
+            case 1 : MouseClick_Button_Variable = "Left Button Clicked" ; break;
+            case 2 : MouseClick_Button_Variable = "Middle Button Clicked" ; break;
+            case 3 : MouseClick_Button_Variable = "Right Button Clicked" ; break;
+            default : MouseClick_Button_Variable = "Invalid Button clicked"; break;
+        }
+    }
+
+    else
+    {
+        switch (event.button)
+        {
+            case 1 : MouseClick_Button_Variable = "Left Button Clicked" ; break;
+            case 4 : MouseClick_Button_Variable = "Middle Button Clicked" ; break;
+            case 2 : MouseClick_Button_Variable = "Right Button Clicked" ; break;
+            default : MouseClick_Button_Variable = "Invalid Button clicked"; break;
+        }
+    }
+
+        document.getElementById("Button_Click").innerHTML = MouseClick_Button_Variable;
+}
+
+
+    //Using Jquery code
+</script>
+
+    <!-- Using Jquery Code -->
+    <h1>Browser compatibility issues for mouse click</h1>
+    <input title="inputElement" id="input_1" type="button" value="MouseClick_Button" >
+        <div id="Button_Click_1">Print MouseClick Event Number division(Jquery division)</div>
+
+<script>
+        jQuery(document).ready(function ()
+    {
+        var MouseClick_button;
+        jQuery("#input_1").mouseup(function (event)
+        {
+            switch (event.which)
+            {
+                case 1 : MouseClick_button = "Left Button Clicked" ; break;
+                case 2 : MouseClick_button = "Middle Button Clicked" ; break;
+                case 3 : MouseClick_button = "Right Button Clicked" ; break;
+                default : MouseClick_button = "Invalid Button clicked"; break;
+            }
+
+            jQuery("#Button_Click_1").html(MouseClick_button);
+
+        });
+         });
+
+
+</script>
+
+<h1>Binding function </h1>
+<input title="inputElement" id="Bind_Button" type="submit"  value="Click here">
+<input title="inputElement" id="Enable_MouseOverEffect" type="submit" value="Enable mouse over effect">
+<input title="inputElement" id="Disable_MouseoverEffect" type="submit" value="Disable mouse over effect">
+<div id="Bind_division">Binding Division </div>
+
+<script>
+
+    
+    //Binding function
+    jQuery(document).ready(function ()
+    {
+        jQuery("#Bind_Button").bind("click",function (event)
+        {
+            jQuery("#Bind_division").html("Button clicked at X = " + event.pageX + " Y = " + event.pageY);
+        });
+    });
+     
+
+    //Binding using multiple event handlers
+
+    jQuery(document).ready(function ()
+    {
+        jQuery("#Bind_Button").bind("click mouseover mouseout",function (event)
+        {
+            if (event.type == "click")
+            {
+                jQuery("#Bind_division").html("Button clicked at X = " + event.pageX + " Y = " + event.pageY);
+            }
+
+            else if (event.type == "mouseover")
+            {
+                jQuery(this).addClass("binding_click");
+            }
+
+            else
+            {
+                jQuery(this).removeClass("binding_click");
+            }
+
+        })
+
+    });
+    jQuery(document).ready(function ()
+    {
+
+            jQuery("#Enable_MouseOverEffect").click(function ()
+            {
+                jQuery("#Bind_Button").bind("mouseover",function ()
+                {
+                    jQuery(this).addClass("binding_click");
+                })
+            });
+
+            jQuery("#Disable_MouseoverEffect").click(function ()
+            {
+                jQuery("#Bind_Button").unbind("click mouseover");
+            });
+
+    });
+
+</script>
+
+<h1>Using on function by applying JSON object</h1>
+
+<input title="inputElement" id="Bind_Button_1" type="submit"  value="Click here">
+<input title="inputElement" id="Enable_MouseOverEffect_1" type="submit" value="Enable mouse over effect">
+<input title="inputElement" id="Disable_MouseoverEffect_1" type="submit" value="Disable mouse over effect">
+<div id="Bind_division_1">Binding Division </div>
+
+<script>
+
+    jQuery(document).ready(function ()
+    {
+        jQuery("#Bind_Button_1").on({
+
+            click : function (event)
+            {
+                jQuery("#Bind_division_1").html("button clicked at X = " + event.pageX + " Y = " + event.pageY);
+            },
+
+            mouseover : function ()
+            {
+                jQuery(this).addClass("binding_click");
+            },
+
+            mouseout : function ()
+            {
+                jQuery(this).removeClass("click binding_click");
+            }
+
+        });
+
+        jQuery("#Bind_Button_1").click()
+    });
+
+
+
+</script>
+
+<h1>Passing data to event handlers </h1>
+<input title="inputElement" id="data_handler" type="button" value="Click here">
+<br>
+<input title="inputElement" id="call_object" type="button" value="JSONObject_Alert">
+
+
+<script>
+
+
+    //Binding function calling
+    jQuery(document).ready(function ()
+    {
+        jQuery("#data_handler").bind("click",sayHello)
+
+        function sayHello()
+        {
+            alert("Hello World");
+        }
+    });
+
+    //Binding function calling using JSON Object
+
+    jQuery(document).ready(function ()
+    {
+        jQuery("#call_object").bind("click",{
+
+            firstName : "ServiceNow Developer",
+            lastName : "Microsoft Location"
+
+        },CallName);
+
+        jQuery("#call_object").bind("click",{
+
+            firstName : "Microsoft Developer",
+
+        },CallName);
+
+        //No Custom Data provided
+        jQuery("#call_object").bind("click",CallName);
+
+        function CallName(event)
+        {
+            if (event.data == null)
+            {
+                alert("No Custom data provided");
+            }
+            else {
+                alert("Welcome " + event.data.firstName + " " + (event.data.lastName != null ? event.data.lastName : ""));
+            }
+        }
+    });
+
+</script>
+
+
+<h1>Dynamically created elements - Events </h1>
+
+<ul>
+    <li>List Item</li>
+    <li>List Item</li>
+    <li>New List Item</li>
+    <li>New List Item</li>
+</ul>
+
+<br>
+<input title="inputElement" id="listItem" type="button" value="Add a new list item">
+
+<script>
+
+    
+   /*  //Performance point of view not that good
+    jQuery(document).ready(function ()
+    {
+        jQuery("#listItem").bind("click",function ()
+        {
+            var Add_listItem = jQuery("<li>Dynamic List Item</li>").bind("click",function ()
+            {
+                jQuery(this).fadeOut(500);
+            });
+            jQuery("ul").append(Add_listItem);
+        });
+
+        jQuery("li").bind("click" ,function ()
+        {
+            jQuery(this).fadeOut(500);
+        });
+    }); */
+    
+    //performance point of view holds good
+
+    jQuery(document).ready(function ()
+    {
+        jQuery("ul li").bind("click",function ()
+        {
+            jQuery(this).fadeOut(500);
+        });
+
+        jQuery("#listItem").bind("click",function ()
+        {
+            jQuery("ul").append("<li>Dynamic List Item created</li>");
+            jQuery("<li>Dynamic List Item created</li>").bind("click", function ()
+            {
+                jQuery(this).fadeOut(500);
+            });
+        });
+
+    });
+</script>
+
+<h1>Execute event only once </h1>
+
+<input title="inputElement" id="Execute_OnlyOnce" type="submit" value="click here">
+
+<script>
+
+    
+    //Use on and off function
+    jQuery(document).ready(function ()
+    {
+
+        jQuery("#Execute_OnlyOnce").on({
+
+            click : function ()
+            {
+                alert("Button Clicked");
+                jQuery(this).off("click");
+            },
+
+            mouseover : function ()
+            {
+                jQuery(this).addClass("changeBackgroundColor");
+                jQuery(this).off("mouseover");
+            },
+
+            mouseout : function ()
+            {
+                jQuery(this).removeClass("changeBackgroundColor");
+                jQuery(this).off("mouseout");
+            }
+
+        });
+
+    });
+
+     
+
+    //Use one function
+    
+
+    jQuery(document).ready(function ()
+    {
+
+        jQuery("#Execute_OnlyOnce").one({
+
+            click : function ()
+            {
+                  alert("Button Clicked");
+            },
+
+        });
+
+    });
+</script>
+
+
+<h1>checking events if bounded or not </h1>
+
+<input title="inputElement" id="Execute_OnlyOnce_1" type="submit" value="click here">
+
+<script>
+
+    jQuery(document).ready(function ()
+    {
+        jQuery("#Execute_OnlyOnce_1").on("click",function ()
+        {
+            alert("Button clicked");
+        });
+
+       
+
+       var JqueryObject =  jQuery("#Execute_OnlyOnce_1");
+        var rawDOMElement = JqueryObject.get(0);
+
+      var eventObject =  jQuery._data(rawDOMElement , "events");
+
+      if (eventObject!= undefined && eventObject.click != undefined)
+      {
+         // alert("Click event already exists . This event is bounded");
+      }
+      else
+      {
+          // alert("Click event already exists . This event is bounded");
+      }
+
+       });
+
+</script>
+
+<h2>Right click disabled on this page . Try via right click to see what happens</h2>
+<div id="default_division">Prevent Default function division</div>
+
+<h2>Hyperlink disabled . CLick on hyperlink to test response</h2>
+<a href="https://www.jetbrains.com/help/idea/reformat-and-rearrange-code.html" id="href_link">JetBrains Reformat Code Link</a>
+<div id="hyperlink_division">HyperLink division</div>
+
+
+<script>
+
+    
+    jQuery(document).ready(function ()
+    {
+        jQuery(this).on("contextmenu" , function (event)
+        {
+            event.preventDefault();
+
+                jQuery("#default_division").append("<h3>Right click disabled<h3>");
+                   
+           
+        });
+    });
+
+    jQuery(document).ready(function ()
+    {
+        jQuery("#href_link").on("click",function (event)
+        {
+            event.preventDefault();
+            jQuery("#hyperlink_division").append("<h3>HyperLink default action disabled</h3> ");
+        });
+
+        jQuery("#href_link").on("click",function(clickEventHandler)
+        {
+            clickEventHandler.preventDefault();
+            jQuery("#hyperlink_division").append("<h2>Alert button will be disabled if needed </h2>")
+
+        });
+    });
+
+     
+
+</script>
+
+
+<h2>Scroll action</h2>
+<h3 id="scroll_division" class="scrollH3_warning">Scroll Event Handled</h3>
+<div id="scroll_division_1" class="scrollDivision_warning">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda at autem cum, debitis dolor dolore
+    doloremque eos eveniet ex fugiat illo in ipsum labore laudantium magni modi molestiae mollitia necessitatibus
+    nihil nostrum nulla officiis omnis placeat porro quaerat quo recusandae rem veritatis voluptates.
+    Aliquid architecto distinctio dolor fugit incidunt, necessitatibus nisi numquam similique sunt.
+    Error facere facilis illum optio rerum tempore tenetur veniam vero! Ab architecto autem dicta dignissimos
+    eius ipsam modi perferendis perspiciatis, quasi quis repellat sed sunt tempora voluptatem voluptates?
+    Accusamus corporis culpa dolores enim harum iure maiores possimus sed tempore, ullam. Aperiam autem beatae minus nemo.</div>
+
+<h3>Scroll event handled <span id="span_id1">0</span> times  </h3>
+
+<h3 >Scroll position in browser = <span id="scroll_position"></span></h3>
+<script>
+
+
+    // Displaying and fade if scrolled
+    jQuery(document).ready(function ()
+    {
+        jQuery("#scroll_division_1").on("scroll",function ()
+        {
+            jQuery("#scroll_division").css("display","inline").fadeOut(1000);
+        });
+    });
+
+    //Tracking scroll count and displaying
+    jQuery(document).ready(function ()
+    {
+        var count =0;
+        jQuery("#scroll_division_1").on("scroll",function ()
+        {
+            jQuery("span").text(count+=1);
+        });
+    });
+
+    // Displaying scroll position in scroll bar
+
+    jQuery(document).ready(function ()
+    {
+        jQuery("#scroll_division_1").on("scroll",function ()
+        {
+            var lastScrollPosition = 0;
+            var scrollPosition = jQuery(this).scrollTop();
+
+
+            if (scrollPosition > lastScrollPosition)
+            {
+                jQuery("#scroll_position").text("Cursor Position = " + scrollPosition + "You scrolled down");
+            }
+            else
+            {
+                jQuery("#scroll_position").text("Cursor Position = " + scrollPosition + "You scrolled up");
+            }
+
+            lastScrollPosition = scrollPosition;
+        })
+
+    });
+
+</script>
+
+
+<h1>Image Gallery</h1>
+<input title="inputElement" type="button" value="Start Slide Show" id="Start_SlideShow">
+<input title="inputElement" type="button" value="Stop Slide Show" id="Stop_SlideShow">
+<br>
+<br>
+
+
+<img title="imgTitle" id="Main_Image" src="image1.jpg">
+
+<div id="Thumbnail_Container" >
+
+    <img title="imgTitle" src="image2.jpg" class="image_Gallery">
+    <img title="imgTitle" src="image2.jpg" class="image_Gallery">
+    <img title="imgTitle" src="image3.jpeg" class="image_Gallery">
+    <img title="imgTitle" src="image4.jpeg" class="image_Gallery">
+    <img title="imgTitle" src="image5.jpeg" class="image_Gallery">
+    <img title="imgTitle" src="image6.jpeg" class="image_Gallery">
+    <img title="imgTitle" src="image7.jpeg" class="image_Gallery">
+
+</div>
+
+<script>
+
+    
+   jQuery(document).ready(function ()
+   {
+       jQuery("#Thumbnail_Container img").on({
+
+           mouseover : function ()
+           {
+               jQuery(this).css({
+                   "border" : "4px solid yellow",
+                   "cursor" : "pointer"
+               });
+           },
+
+           mouseout : function ()
+           {
+               jQuery(this).css({
+                   "border" : "4px solid red",
+                   "cursor" : "pointer"
+               });
+           },
+
+          click : function ()
+          {
+              var srcImage = jQuery(this).attr("src");
+
+              jQuery("#Main_Image").attr("src",srcImage);
+          }
+
+       });
+   });
+
+     
+
+</script>
+
+<h1>Animation function</h1>
+
+<input title="inputElement" type="submit" value="Click for animation" id="input_Animation">
+
+<div id="animate_division">Animation section container division</div>
+
+<script>
+
+    jQuery(document).ready(function ()
+    {
+        jQuery("#input_Animation").click(function ()
+        {
+            jQuery("#animate_division").animate({
+                "font-size" : "50px",
+                "border": "3px solid red",
+                "font-weight" : "bold",
+           
+            },2000);
+        });
+    });
+
+</script>
+
+<h1>Image Animation</h1>
+
+
+<!-- <input title="inputElement" type="checkbox" value="TurnOff">Turn off Animations
+<br>
+<br>
+
+<img src="image5.jpeg"  id="Image_division" title="ImageTitle">
+
+<script>
+
+jQuery(document).ready(function ()
+{
+    jQuery("#Image_division").on({
+        mouseout : function ()
+        {
+           jQuery(this).animate({
+               "height" : "100px",
+               "width" : "100px"
+           },3000 , "linear" ,AnimationComplete_MouseOver );
+        },
+
+        mouseover : function ()
+        {
+            jQuery(this).animate({
+                "height" : "500px",
+                "width" : "500px"
+            },3000 , "linear" , AnimationComplete_MouseOut);
+        }
+
+    });
+
+    function AnimationComplete_MouseOver()
+    {
+        alert("Animation completed for MouseOver function");
+    }
+
+    function  AnimationComplete_MouseOut()
+    {
+       alert("Animation completed for MouseOut function");
+    }
+
+});
+
+    jQuery(document).ready(function ()
+    {
+        jQuery("#Image_division").click(function ()
+        {
+            jQuery(this).animate({"left" : "300px"}).
+                animate({"left" : "50px"})
+        });
+    });
+
+</script>
+
+ -->
+
+<h1> Animating Progress bar</h1>
+
+<label>Start Percentage :</label>
+
+<select title="inputSelectElement" id="select_ID">
+
+    <option value="10">10</option>
+    <option value="20">20</option>
+    <option value="30">30</option>
+    <option value="40">40</option>
+    <option value="50">50</option>
+    <option value="60">60</option>
+    <option value="70">70</option>
+    <option value="80">80</option>
+    <option value="90">90</option>
+    <option value="100">100</option>
+
+</select title="inputSelectElement">
+
+<input title="inputElement" type="button" value="Start Animation" id="Button_ID">
+
+<br>
+<br>
+
+<div id="OuterDiv" class="OuterDiv_warning">
+
+    <div id="Inner_Division" class="InnerDiv_warning">
+
+    </div>
+
+</div>
+
+<script>
+
+   jQuery(document).ready(function ()
+   {
+       var previousPercentage = 0;
+       var currentPercentage = 0;
+
+       jQuery("#Button_ID").click(function ()
+       {
+           previousPercentage = currentPercentage;
+           currentPercentage = jQuery("#select_ID").val();
+           animateProgressBar(previousPercentage,currentPercentage);
+       });
+
+   });
+
+    function animateProgressBar(previousPercentage,currentPercentage)
+    {
+        jQuery("#Inner_Division").animate({
+            "width" : (currentPercentage * 500)/100
+        },2000);
+
+        if (previousPercentage > currentPercentage)
+        {
+            currentPercentage -= 1;
+        }
+
+        jQuery({counter : previousPercentage}).animate({counter: currentPercentage}, {
+            duration: 2000,
+            step: function () {
+                jQuery("#Inner_Division").text(Math.ceil(this.counter) + " % ");
+            },
+            }
+        );
+    }
+
+</script>
+
+
+<h1>Hiding Passwords</h1>
+
+<label>Password : </label>
+<input title="inputElement" type="password" id="Password_Masked">
+<input title="inputElement" type="checkbox" value="Show_Password" id="Checkbox_Password">Show Password
+
+<script>
+
+    jQuery(document).ready(function ()
+    {
+        jQuery("#Checkbox_Password").click(function ()
+        {
+            jQuery("#Password_Masked").attr("type",jQuery(this).is(":checked") ? "text" : "password");
+        });
+    });
+
+</script>
+
+
+<h1>Increase and decrease font size</h1>
+<label>Font-Size : </label>
+
+<a id="Increase_fontSize"> Increase</a>
+<a id="Decrease_fontSize"> Decrease </a>
+<a id="Reset_fontSize">Reset</a>
+
+<div id="division_content">
+
+    <ul class="Increase_class" id="unordered_list">
+        <li>What is Jquery</li>
+        <li>What is $(document).ready function in Jquery</li>
+        <li>Benefits of using CDN</li>
+        <li>#id select title="inputSelectElement"or</li>
+        <li>element select title="inputSelectElement"or</li>
+        <li>class select title="inputSelectElement"or</li>
+        <li>attribute select title="inputSelectElement"or</li>
+        <li>attribute value select title="inputSelectElement"or</li>
+        <li>case sensitive attribute select title="inputSelectElement"or</li>
+        <li>jquery input title="inputElement" vs Output </li>
+    </ul>
+</div>
+
+<script>
+
+    jQuery(document).ready(function ()
+    {
+        jQuery("#Increase_fontSize").click(function ()
+        {
+            modifyFontSize("increase");
+        });
+
+        jQuery("#Decrease_fontSize").click(function ()
+        {
+            modifyFontSize("decrease");
+        });
+
+        jQuery("#Reset_fontSize").click(function ()
+        {
+            modifyFontSize();
+        });
+    });
+
+
+    function modifyFontSize(flag)
+    {
+       var fontsize_variable = parseInt(jQuery("#unordered_list").css("font-size"));
+
+       if (flag == "increase")
+       {
+           fontsize_variable+= 5;
+       }
+       else if (flag == "decrease")
+       {
+           fontsize_variable-= 3;
+       }
+       else
+       {
+           fontsize_variable = 15;
+       }
+
+       jQuery("#unordered_list").css("font-size",fontsize_variable);
+
+    }
+</script>
+
+
+
+<h1>Floating division</h1>
+
+<table class="tableStyleBorder">
+
+    <tr>
+        <td class="tableData">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus assumenda, at blanditiis culpa deleniti dolor doloribus dolorum eius excepturi exercitationem expedita fugit harum iste itaque laboriosam magnam magni minus nam neque numquam officia pariatur possimus provident qui quo repellendus similique vitae? Aliquid non tenetur vitae.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus assumenda, at blanditiis culpa deleniti dolor doloribus dolorum eius excepturi exercitationem expedita fugit harum iste itaque laboriosam magnam magni minus nam neque numquam officia pariatur possimus provident qui quo repellendus similique vitae? Aliquid non tenetur vitae.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus assumenda, at blanditiis culpa deleniti dolor doloribus dolorum eius excepturi exercitationem expedita fugit harum iste itaque laboriosam magnam magni minus nam neque numquam officia pariatur possimus provident qui quo repellendus similique vitae? Aliquid non tenetur vitae.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus assumenda, at blanditiis culpa deleniti dolor doloribus dolorum eius excepturi exercitationem expedita fugit harum iste itaque laboriosam magnam magni minus nam neque numquam officia pariatur possimus provident qui quo repellendus similique vitae? Aliquid non tenetur vitae.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus assumenda, at blanditiis culpa deleniti dolor doloribus dolorum eius excepturi exercitationem expedita fugit harum iste itaque laboriosam magnam magni minus nam neque numquam officia pariatur possimus provident qui quo repellendus similique vitae? Aliquid non tenetur vitae.
+
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus assumenda, at blanditiis culpa deleniti dolor doloribus dolorum eius excepturi exercitationem expedita fugit harum iste itaque laboriosam magnam magni minus nam neque numquam officia pariatur possimus provident qui quo repellendus similique vitae? Aliquid non tenetur vitae.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus assumenda, at blanditiis culpa deleniti dolor doloribus dolorum eius excepturi exercitationem expedita fugit harum iste itaque laboriosam magnam magni minus nam neque numquam officia pariatur possimus provident qui quo repellendus similique vitae? Aliquid non tenetur vitae.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus assumenda, at blanditiis culpa deleniti dolor doloribus dolorum eius excepturi exercitationem expedita fugit harum iste itaque laboriosam magnam magni minus nam neque numquam officia pariatur possimus provident qui quo repellendus similique vitae? Aliquid non tenetur vitae.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus assumenda, at blanditiis culpa deleniti dolor doloribus dolorum eius excepturi exercitationem expedita fugit harum iste itaque laboriosam magnam magni minus nam neque numquam officia pariatur possimus provident qui quo repellendus similique vitae? Aliquid non tenetur vitae.
+
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus assumenda, at blanditiis culpa deleniti dolor doloribus dolorum eius excepturi exercitationem expedita fugit harum iste itaque laboriosam magnam magni minus nam neque numquam officia pariatur possimus provident qui quo repellendus similique vitae? Aliquid non tenetur vitae.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus assumenda, at blanditiis culpa deleniti dolor doloribus dolorum eius excepturi exercitationem expedita fugit harum iste itaque laboriosam magnam magni minus nam neque numquam officia pariatur possimus provident qui quo repellendus similique vitae? Aliquid non tenetur vitae.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus assumenda, at blanditiis culpa deleniti dolor doloribus dolorum eius excepturi exercitationem expedita fugit harum iste itaque laboriosam magnam magni minus nam neque numquam officia pariatur possimus provident qui quo repellendus similique vitae? Aliquid non tenetur vitae.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus assumenda, at blanditiis culpa deleniti dolor doloribus dolorum eius excepturi exercitationem expedita fugit harum iste itaque laboriosam magnam magni minus nam neque numquam officia pariatur possimus provident qui quo repellendus similique vitae? Aliquid non tenetur vitae.
+
+
+
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus assumenda, at blanditiis culpa deleniti dolor doloribus dolorum eius excepturi exercitationem expedita fugit harum iste itaque laboriosam magnam magni minus nam neque numquam officia pariatur possimus provident qui quo repellendus similique vitae? Aliquid non tenetur vitae.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus assumenda, at blanditiis culpa deleniti dolor doloribus dolorum eius excepturi exercitationem expedita fugit harum iste itaque laboriosam magnam magni minus nam neque numquam officia pariatur possimus provident qui quo repellendus similique vitae? Aliquid non tenetur vitae.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus assumenda, at blanditiis culpa deleniti dolor doloribus dolorum eius excepturi exercitationem expedita fugit harum iste itaque laboriosam magnam magni minus nam neque numquam officia pariatur possimus provident qui quo repellendus similique vitae? Aliquid non tenetur vitae.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus assumenda, at blanditiis culpa deleniti dolor doloribus dolorum eius excepturi exercitationem expedita fugit harum iste itaque laboriosam magnam magni minus nam neque numquam officia pariatur possimus provident qui quo repellendus similique vitae? Aliquid non tenetur vitae.
+
+        </td>
+
+
+        <td class="tdStyle"> Side Panel
+            <div id="floating_division" class="floatingDivisionDiv">Floating division</div>
+
+        </td>
+    </tr>
+
+</table>
+
+
+<script>
+
+
+    
+    jQuery(document).ready(function ()
+    {
+
+        var floatingDivPosition = jQuery("#floating_division").position();
+
+        var scrollPosition = jQuery(window).scrollTop;
+
+        if (scrollPosition > floatingDivPosition)
+        {
+            jQuery("#floating_division").css({
+                "position" : "fixed",
+                "top" : 0
+            })
+        }
+
+        else
+        {
+            jQuery("#floating_division").css({
+                "position" : "relative",
+                "top" : 0
+            })
+        }
+
+    });
+
+
+     
+
+</script>
+
+
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JqueryAugustFile</title>
+   <link rel="stylesheet" href="File1.css">
+    <script src="File1.js"></script>
+    <script src="jquery-3.6.0.js"></script>
+    <script src="jquery-migrate-1.4.1.js"></script>
+    <script src="jquery-migrate-3.3.2.js"></script>
+
+
+</head>
+<body>
+
+<h1 class="header_class">Executing Jquery file from ServiceNow project </h1>
+
+<p class="header_class">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum eum ex exercitationem id pariatur quasi repellat sequi tempore vel voluptatem!</p>
+
+<p class="header_class">Changing context , started JQuery revision, now auto refresh works</p>
+
+<label>Button</label>
+<input type="button" value="ClickButton_Execute_JavaScriptFile" onclick="Click_function()">
+
+<h1>Disabled selector </h1>
+
+<label>FirstName_changedName</label>
+<input type="text" disabled="disabled" title="input1">
+<br>
+
+<label>LastName</label>
+<input type="text" disabled="disabled" title="input2">
+<br>
+
+Email<input type="text" title="input3">
+<br>
+
+Gender<select title="input4">
+    <option>Male</option>
+    <option>Female</option>
+</select>
+<br>
+
+Comments<input type="text" title="input5">
+<br>
+<input type="text" value="Submit" disabled="disabled" title="input6">
+
+<script>
+jQuery(document).ready(function ()
+{
+jQuery(':disabled').css("border","5px solid red");
+});
+
+</script>
+
+
+
+
+<div id="Division_ID">Division Section </div>
+
+<h1>Printing JSON objects in a division Section </h1>
+<div id="division_JSON">JSON Division </div>
+
+
+<h4 id="header_ObjectToStringConversion">Printing JSON object to String </h4>
+
+<h4 id="header_stringToObjectConversion">Printing JSON String to Object </h4>
+
+<h4 id="applyingParse_function">Applying parse function</h4>
+
+<script>
+
+    var JSONObject_CompanyDetails ={
+
+     "ServiceNow" :
+            {
+
+        "Company_FirstName" : "ServiceNow Developer",
+        "Company_LastName" : "Client location",
+        "Company_EmailAddress" : "Developer@outlook.com",
+        "Company_Location" : "Bangalore"
+    },
+
+    "Microsoft":
+    {
+            "Company_FirstName" : "Microsoft Developer",
+            "Company_LastName" : "Microsoft location",
+            "Company_EmailAddress" : "Microsoft@outlook.com",
+            "Company_Location" : "Hyderabad"
+
+    },
+
+    "Equifax":
+        {
+            "Company_FirstName" : "Equifax Developer",
+            "Company_LastName" : "Equifax location",
+            "Company_EmailAddress" : "Equifax@outlook.com",
+            "Company_Location" : "Chennai"
+
+        },
+
+   "PeopleSoft":
+        {
+            "Company_FirstName" : "PeopleSoft Developer",
+            "Company_LastName" : "PeopleSoft location",
+            "Company_EmailAddress" : "PeopleSoft@outlook.com",
+            "Company_Location" : "Punjab"
+
+        },
+    };
+
+
+    jQuery(document).ready(function ()
+    {
+
+        jQuery("#division_JSON").html(JSONObject_CompanyDetails.Microsoft.Company_FirstName + "<br>" +
+            JSONObject_CompanyDetails.Microsoft.Company_LastName + "<br>" +
+            JSONObject_CompanyDetails.Microsoft.Company_EmailAddress + "<br>" +
+            JSONObject_CompanyDetails.Microsoft.Company_Location
+
+
+        );
+    });
+
+    var result = JSON.stringify(JSONObject_CompanyDetails); // this will convert JavaScript object to JSON object
+
+    
+    jQuery("#header_ObjectToStringConversion").html(result);
+
+
+
+    var String_Obtained = "{ServiceNow:{Company_FirstName:ServiceNow Developer,Company_LastName:Client location,Company_EmailAddress:Developer@outlook.com,Company_Location:Bangalore},Microsoft :{\"Company_FirstName\":\"Microsoft Developer\",\"Company_LastName\":\"Microsoft location\",\"Company_EmailAddress\":\"Microsoft@outlook.com\",\"Company_Location\":\"Hyderabad\"}";
+
+    document.write("printing converted string to object conversion details");
+
+    jQuery(document).ready(function()
+    {
+        jQuery("#header_stringToObjectConversion").html(String_Obtained);
+    });
+
+
+
+    var r = JSON.parse(result);
+
+    document.write("applying parse function");
+
+    jQuery(document).ready(function()
+    {
+        jQuery("#applyingParse_function").html(r);
+    });
+
+
+</script>
+
+
+
+<h3 id="nextRevision">Printing hello world during revision</h3>
+
+
+
+<h4></h4>
+
+<h3>Printing JSON details</h3> 
+<h4 class="nextClassRevision"></h4>
+<script>
+
+    jQuery(document).ready(function()
+    {
+        jQuery("#nextRevision").html("World has come to an end");
+
+    })
+
+    var a = 
+    {
+        firstName : "revision started",
+        lastName : "revision ended",
+        doesHeExist : true,
+        agePrinted : 25
+    }
+
+    let he = JSON.stringify(a);
+
+    jQuery(document).ready(function()
+    {
+        jQuery(".nextClassRevision").html(he);
+    });
+
+
+
+</script>
+
+
+
+</body>
+</html>

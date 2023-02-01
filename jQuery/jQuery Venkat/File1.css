@@ -1,0 +1,119 @@
+.header_class
+{
+    background-color: red;
+    color: white;
+}
+
+.bold_class
+{
+    font-weight: bold;
+}
+
+.italics_class
+{
+    font-style: italic;
+}
+
+.color_class
+{
+    color:  red;
+}
+
+.textBoxStyle
+{
+    background-color: green;
+    color: white;
+}
+
+.binding_click
+{
+    background-color: red;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.changeBackgroundColor
+{
+    padding: 10px;
+    border: 3px solid  black;
+    background-color: red;
+    color: white;
+}
+
+.image_Gallery
+{
+    height: 100px ;
+    width: 100px;
+    border: 4px solid blue
+
+}
+
+.Increase_class
+{
+
+    background-color: red;
+    color: white;
+    padding: 15px;
+    border: 3px solid black;
+    margin: 10px;
+    
+}
+
+
+#scrollDivision_warning
+{
+    height: 350px ; width: 250px  ; overflow: scroll
+}
+
+
+#scrollH3_warning
+{
+    display: none ; color: red
+}
+
+
+#imgTitle_warning
+{
+    height: 500px ; width: 500px; border: 4px solid blue
+}
+
+#OuterDiv_warning
+{
+    padding: 5px ; background-color: gray ; height: 20px ; width: 500px
+}
+
+
+#InnerDiv_warning
+{
+    color: white ; background-color: red ; text-align: center ; height: 15px ; width : 0px
+}
+
+
+.ImageAnimation 
+{
+    height: 100px ; width: 100px ; position: absolute
+}
+
+
+.floatingDivisionDiv
+{
+    height: 100px ; background-color: red ; color: white ; border: 2px solid black
+}
+
+
+.tdStyle
+{
+    vertical-align: top
+}
+
+.tableStyleBorder
+{
+    border: 2px solid black; border-collapse: collapse
+}
+
+
+.tableData
+{
+    width: 500px; border: 2px solid black ; vertical-align: top"
+}

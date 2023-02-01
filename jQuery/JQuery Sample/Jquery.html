@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery Programs</title>
+    <link rel="stylesheet" href="JavaScript%20Tutorial%2075%20Videos.css">
+    <script src="JavaScript%20Tutorial%2075%20Videos.js"></script>
+    <script src="jquery-3.6.0.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="jquery-migrate-1.4.1.js"></script>
+    <script src="jquery-migrate-3.3.2.js"></script>
+
+<body>
+
+
+<h1 id="header_Id" style="text-align: center">Executing JavaQuery initial program </h1>
+
+<h2 class="Setting_Class_Small"> Header tag division</h2>
+
+<div class="Setting_Class_Small">Division Tag</div>
+
+<p>Lorem ipsum dolor sit amet, <span class="Setting_Class_Big">consectetur adipisicing </span> elit. Amet at atque, distinctio eaque hic, laudantium magnam maiores mollitia, nulla numquam odio quam repellendus ullam veritatis voluptatum? Consequuntur fugit quos vitae.</p>
+
+<h2 class="Setting_Class_Small"> Header tag division</h2>
+
+<div class="Setting_Class_Big">Division Tag</div>
+
+<p>Lorem ipsum dolor sit amet, <span class="Setting_Class">consectetur adipisicing </span> elit. Amet at atque, distinctio eaque hic, laudantium magnam maiores mollitia, nulla numquam odio quam repellendus ullam veritatis voluptatum? Consequuntur fugit quos vitae.</p>
+
+
+<script>
+
+
+    jQuery(document).ready(function ()
+    {
+        jQuery(".Setting_Class_Small , span.Setting_Class_Big").css("border","5px solid black");
+    });
+
+</script>
+
+<div title="Title_2_Division" style="background-color: red">Red Division </div>
+
+<br>
+<br>
+
+
+<div title="Title_3_Division" style="background-color: green">Green Division </div>
+
+<br>
+<br>
+
+<div title="Title Division">Normal Division </div>
+
+
+<script>
+
+    jQuery(document).ready(function ()
+    {
+        jQuery("div[title = Title_2_Division][style='background-color: red']").css("border","5px solid black");
+    });
+
+
+</script>
+
+<br>
+<br>
+<br>
+
+
+<div title="DivTitle1">1st Division</div>
+<div title="DIVTITLE2">2nd Division</div>
+<div title="divtitle3">3rd Division</div>
+
+<script>
+
+jQuery(document).ready(function ()
+{
+
+    jQuery("div[title]").filter(function ()
+    {
+      return RegExp("div","i").test(jQuery(this).attr("title"));
+
+    })
+    .css("border","3px solid black");
+
+});
+
+</script>
+
+<br>
+<br>
+<br>
+<br>
+
+
+FirstName :<input type="text" value="John">
+<br>
+<br>
+LastName :<input type="text" value="Major">
+<br>
+<br>
+
+Gender :
+<input type="radio" name="Gender" value="Male">Male
+<input type="radio" name="Gender" value="Female">Female
+<br>
+<br>
+
+Skills :
+<input type="checkbox" value="JavaScript" name="Skills">JavaScript
+<input type="checkbox" checked = checked value="Java" name="Skills">Java
+<input type="checkbox" value="CSharp" name="Skills">CSharp
+
+
+<br>
+<br>
+Country :
+<select>
+
+    <option>USA</option>
+    <option>Canada</option>
+    <option>Russia</option>
+    <option>India</option>
+
+
+</select>
+<br>
+<br>
+
+Summary :
+<textarea>I am a senior developer in facebook MNC company </textarea>
+<br>
+<br>
+
+<input type="submit" value="Submit">
+
+
+
+<br>
+<br>
+<br>
+
+Gender :
+<input type="radio" name="Gender" value="Male" >Male
+<input type="radio" name="Gender" value="Female">Female
+<br>
+<div id="div_result"></div>
+<br>
+<input type="submit"  value="Submit" id="Submit_ID">
+
+<script>
+
+    jQuery(document).ready(function ()
+    {
+        jQuery("#Submit_ID").click(function ()
+        {
+            var result = jQuery("input[type = 'radio']:checked");
+
+            if(result.length > 0)
+            {
+                jQuery("#div_result").html(result.val() + " is selected ");
+            }
+            else
+            {
+                jQuery("#div_result").html("No option is selected ");
+            }
+
+        });
+    });
+
+</script>
+
+
+
+<br>
+<br>
+<br>
+<br>
+
+Skills :
+<br>
+<input type="checkbox" value="JavaScript" name="Skills">JavaScript
+<input type="checkbox" value="Jquery" name="Skills">Jquery
+<input type="checkbox" value="CSharp" name="Skills">CSharp
+<input type="checkbox" value="Visual Basic" name="Skills">Visual Basic
+<br>
+<div id="Division_ID"></div>
+<br>
+<input type="submit" value="Submit" id="Submit_ID1">
+
+
+<script>
+
+
+    jQuery(document).ready(function ()
+    {
+        jQuery("#Submit_ID1").click(function ()
+        {
+             var result2 = jQuery("input[type = 'checkbox']:checked");
+
+             if (result2.length > 0)
+             {
+                 var resultString = "No of checkBoxes selected " + result2.length + "<br>";
+
+                 result2.each(function ()
+                 {
+                     resultString+= jQuery(this).val() + " is selected" + "<br>";
+                 });
+
+                 jQuery("#Division_ID").html(resultString);
+             }
+
+             else
+             {
+                 jQuery("#Division_ID").html("No checkbox is selected");
+             }
+
+
+        });
+
+
+
+    });
+
+</script>
+
+<br>
+<br>
+<br>
+<br>
+
+
+Countries :
+<br>
+<div id="EncloseCountries">
+<input  type="checkbox" value="India" name="Countries">India
+<input  type="checkbox" value="Pakistan" name="Countries">Pakistan
+<input  type="checkbox" value="China" name="Countries">China
+<input  type="checkbox" value="Bangladesh" name="Countries">Bangladesh
+</div>
+    <br>
+<div id="Countries"></div>
+<br>
+<br>
+
+Cities :
+<br>
+<div id="EnclosedCities">
+<input type="checkbox" value="Hyderabad" name="Cities">Hyderabad
+<input type="checkbox" value="Bangalore" name="Cities">Bangalore
+<input type="checkbox" value="Goa" name="Cities">Goa
+<input type="checkbox" value="Pune" name="Cities">Pune
+</div>
+<br>
+<br>
+<div id="Cities_1"></div>
+<br>
+<br>
+
+
+<input type="submit" value="Get Selected Countries" id="Submit_Skills">
+<input type="submit" value="Get Selected Cities" id="Submit_Cities">
+
+<script>
+
+
+    jQuery(document).ready(function ()
+    {
+        //Skills Section
+        jQuery("#EncloseCountries input[type=checkbox]").click(function ()
+        {
+           var resultCountries =  jQuery("#EncloseCountries input[name='Countries']:checked");
+
+            if (resultCountries.length > 0)
+            {
+                var resultString_Countries = "No of Countries Selected = " + resultCountries.length + "<br>";
+
+                resultCountries.each(function ()
+                {
+                    resultString_Countries += jQuery(this).val() + " is selected <br> ";
+                });
+
+                jQuery("#Countries").html(resultString_Countries);
+            }
+            else
+            {
+                jQuery("#Countries").html("Countries Selected = " + resultCountries.length);
+            }
+
+        });
+
+        //Cities Section
+
+        jQuery("#EnclosedCities input[type=checkbox]").click(function ()
+            {
+                var resultCities =  jQuery("#EnclosedCities input[name='Cities']:checked");
+
+                if (resultCities.length > 0)
+                {
+                    var resultString_Cities = "No of Skills Selected " + resultCities.length + "<br>";
+
+                    resultCities.each(function ()
+                    {
+                        resultString_Cities += jQuery(this).val() + " is selected <br> ";
+                    });
+
+                    jQuery("#Cities_1").html(resultString_Cities);
+                }
+                else
+                {
+                    jQuery("#Cities_1").html("Cities Selected = " + resultCities.length);
+                }
+
+            }
+
+        );
+
+    });
+
+</script>
+
+
+<h1>Performing Iteration for the 2nd time </h1>
+
+Countries :
+<br>
+<div id="EncloseCountries_2ndTime">
+    <input  type="checkbox" value="India" name="Countries">India
+    <input  type="checkbox" value="Pakistan" name="Countries">Pakistan
+    <input  type="checkbox" value="China" name="Countries">China
+    <input  type="checkbox" value="Bangladesh" name="Countries">Bangladesh
+</div>
+<br>
+<div id="Countries_2ndTime"></div>
+<br>
+<br>
+
+Cities :
+<br>
+<div id="EnclosedCities_2ndTime">
+    <input type="checkbox" value="Hyderabad" name="Cities">Hyderabad
+    <input type="checkbox" value="Bangalore" name="Cities">Bangalore
+    <input type="checkbox" value="Goa" name="Cities">Goa
+    <input type="checkbox" value="Pune" name="Cities">Pune
+</div>
+<br>
+<br>
+<input type="submit" value="Get Selected Countries for 2nd Time " id="Submit_Countries_2ndTime">
+<input type="submit" value="Get Selected Cities for 2nd Time " id="Submit_Cities_2ndTime ">
+<br>
+<br>
+<div id="Cities_1_2nd Time"></div>
+<br>
+<br>
+
+<script>
+
+    jQuery(document).ready(function () {
+        jQuery("#Submit_Countries_2ndTime").click(function () {
+            var result = jQuery("input[name = Countries]:checked");
+
+            if (result.length > 0) {
+                var resultString = "No of checkboxes selected = " + result.length + "<br>";
+                jQuery(result.each(function () {
+
+                    resultString += jQuery(this).val() + "is selected <br>";
+
+                }));
+                jQuery("Countries_2ndTime").html(resultString);
+
+            } else {
+                jQuery("#Countries_2ndTime").html("No checkbox is selected");
+            }
+
+        });
+    });
+
+</script>
+
+
+<h1>Displaying value and text from dropdown list</h1>
+<br>
+<br>
+Country :
+<select id="Select_ID" multiple ="multiple">
+
+    <option value="IndianCulture" name="DropDownValue" >India</option>
+    <option value="CanadianCulture" name="DropDownValue" >Canada</option>
+    <option value="ChineseCulture" name="DropDownValue">China</option>
+    <option value="BangladeshiCulture" name="DropDownValue">Bangladesh</option>
+
+</select>
+
+<button id="Button_Selected_Option">Selected_Option</button>
+
+<div id="option_ID">Typing selected value options </div>
+
+<script>
+
+    jQuery(document).ready(function ()
+    {
+        jQuery("#Button_Selected_Option").click(function ()
+        {
+
+            var result = jQuery("#Select_ID option:selected");
+
+                if (result.length > 0)
+                {
+                    var resultString = "No of checkboxes selected = " + result.length + "<br>";
+
+                    result.each(function ()
+                    {
+                        resultString+= "Value selected = " + jQuery(this).val() + "<br> CheckboxText = " + jQuery(this).text();
+                    });
+
+                    jQuery("#option_ID").html(resultString);
+                }
+
+                else
+                {
+                    jQuery("#option_ID").html("No option selected <br> No of checkboxes selected = " + result.length);
+                }
+        });
+
+    });
+
+
+
+</script>
+
+
+<h1>Checking status of the file if working or not </h1>
+
+
+First Name<input type="text">
+<br>
+
+First Name<input type="text">
+<br>
+
+First Name<input type="text">
+<br>
+
+
+</body>
+</html>

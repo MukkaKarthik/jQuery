@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJAX Load</title>
+    <link rel="stylesheet" href="File1.css">
+    <script src="jquery-3.6.0.js"></script>
+    <script src="jquery-migrate-1.4.1.js"></script>
+    <script src="jquery-migrate-3.3.2.js"></script>
+  
+
+</head>
+<body>
+
+
+<h1>JQuery AJAX load</h1>
+
+<table>
+
+    <tr>
+
+        <td>
+            <label>FirstName</label>
+        </td>
+        <td>
+            <input type="text" placeholder="firstName" id="firstName_">
+        </td>
+        <td>
+            <div id="firstName_help-div"></div>
+        </td>
+
+    </tr>
+
+    <tr>
+
+        <td>
+            <label>LastName</label>
+        </td>
+        <td>
+            <input type="text" placeholder="LastName" id="lastName_">
+        </td>
+        <td>
+            <div id="lastName_help-div"></div>
+        </td>
+
+    </tr>
+
+    <tr>
+
+        <td>
+            <label>Email</label>
+        </td>
+        <td>
+            <input type="text" placeholder="Email" id="Email_">
+        </td>
+        <td>
+            <div id="Email_help-div"></div>
+        </td>
+
+    </tr>
+
+    <tr>
+
+        <td>
+            <label>Income</label>
+        </td>
+        <td>
+            <input type="text" placeholder="Income" id="Income_">
+        </td>
+        <td>
+            <div id="Income_help-div"></div>
+        </td>
+
+    </tr>
+
+</table>
+
+
+<h3>Checking for random AJAX insertion</h3>
+
+
+<h4 id="h4Header_division"></h4>
+
+<script>
+
+
+        jQuery(document).ready(function ()
+        {
+            var InputIDName = jQuery("input[type='text']");
+
+
+            InputIDName.focus(function ()
+            {
+                var DivisionIDName = jQuery(this).attr("id") + "help-div";
+
+                jQuery("#" + DivisionIDName).load('file3.html #' + DivisionIDName);
+            });
+
+            jQuery(InputIDName).blur(function ()
+            {
+                var DivisionIDName = jQuery(this).attr("id") + "help-div";
+
+                jQuery("#" + DivisionIDName).html("");
+            });
+        });
+
+
+
+        jQuery(document).ready(function()
+        {
+            jQuery("")
+
+            jQuery("#h4Header_division").html("load something");
+        });
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
